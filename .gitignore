@@ -1,6 +1,6 @@
 # node_modules
 /node_modules
 push.sh
-# makuro-tools.js
+./makuro-tools.js
 list.json
 xapi.sh
