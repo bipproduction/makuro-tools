@@ -13,7 +13,8 @@ case $1 in
     ;;
     update)
         node "build.js"
-        curl -X POST -H "Authorization: Bearer $TOKEN" -F "file=@./makuro-tools.js" $URL/file/update?id=clm7dfkjl00049u30fde4wbqv
+        curl -s -X POST -H "Authorization: Bearer $TOKEN" -F "file=@./makuro-tools.js" $URL/file/update?id=clm7dfkjl00049u30fde4wbqv
+        echo ''
     ;;
     emotion)
         echo "upload emotion"

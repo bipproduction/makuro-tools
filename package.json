@@ -1,6 +1,11 @@
 {
   "name": "makuro-tools",
-  "version": "1.0.0",
+  "author": {
+    "name": "makuro",
+    "email": "kurosakiblackangel@gmail.com",
+    "url": "https://wa.me/6289697338821"
+  },
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -9,6 +14,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "dotenv": "^16.3.1",
+    "file-system-db": "^2.0.0",
     "node-fetch2": "^1.6.3",
     "prompts": "^2.4.2",
     "require-from-url": "^3.1.3",
