@@ -46,6 +46,7 @@ const listServer = [
         value: "set_config",
         action: async () => {
 
+            
             const listForm = ["host", "name", "user", "password", "path"]
             const dataHasil = {}
             for (let f of listForm) {
@@ -55,7 +56,7 @@ const listServer = [
                     type: "text"
                 }).then(({ setting }) => setting)
             }
-            
+
 
             db.set('server_config', {
                 [dataHasil.name]: dataHasil
