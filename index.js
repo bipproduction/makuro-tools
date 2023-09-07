@@ -30,8 +30,37 @@ const listGit = [
             const isGit = fs.existsSync('.git')
             if (!isGit) return console.log("bukan git dir project!".yellow)
             const currentBranch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
-            execSync(`git add -A && git commit -m "makuro-tools $(date)" && git push origin ${currentBranch}`, {stdio: "inherit"})
-            console.log("SUCCESS!".green)
+            execSync(`git add -A && git commit -m "makuro-tools $(date)" && git push origin ${currentBranch}`, { stdio: "inherit" })
+            console.log(`SUCCESS! branch ${currentBranch}`.green)
+        }
+    }
+];
+
+/**
+ * @type {TYPE}
+ */
+const listServer = [
+    {
+        title: "set config",
+        description: "simpan pengaturan",
+        value: "set_config",
+        action: async () => {
+
+            const listForm = ["host", "name", "user", "password", "path"]
+            const dataHasil = {}
+            for (let f of listForm) {
+                dataHasil[f] = await prompts({
+                    name: "setting",
+                    message: f,
+                    type: "text"
+                }).then(({ setting }) => setting)
+            }
+
+            db.set('server_config', {
+                [dataHasil.name]: dataHasil
+            })
+            
+            console.log("SUCCESS !".green)
         }
     }
 ]
@@ -75,6 +104,22 @@ const listPilihan = [
             }).then(({ git_menu }) => {
                 if (!git_menu) return console.log("bye ...".cyan)
                 listGit.find((v) => v.value === git_menu).action()
+            })
+        }
+    },
+    {
+        title: "server",
+        description: "pengaturan server",
+        value: "server",
+        action: () => {
+            prompts({
+                name: "server",
+                message: "server tools",
+                type: "select",
+                choices: listServer
+            }).then(({ server }) => {
+                if (!server) return console.log("bye ...".cyan)
+                listServer.find((v) => v.value === server).action()
             })
         }
     }

@@ -4,3 +4,4 @@
 ./makuro-tools.js
 ./upload.js
 ./xapi.sh
+./db.json

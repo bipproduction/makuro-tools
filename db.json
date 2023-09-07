@@ -1,3 +1,12 @@
 {
-    "nama": "apanya"
+    "nama": "apanya",
+    "server_config": {
+        "dsdsd": {
+            "host": "dsdsds",
+            "name": "dsdsd",
+            "user": "dsdsd",
+            "password": "dsdsd",
+            "path": "dsdsds"
+        }
+    }
 }
