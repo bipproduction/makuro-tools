@@ -1,8 +1,8 @@
 const root = require('child_process').execSync('npm root -g').toString().trim() + '/makuro-tools/node_modules/';
-require(root + 'colors');
-const prompts = require(root + 'prompts');
+require('colors');
+const prompts = require('prompts');
 const fs = require('fs');
-const fetch = require(root + 'node-fetch2')
+const fetch = require('node-fetch2')
 const { execSync } = require('child_process');
 const emotionText = 'clm8jcl8r00019ug4abjwxykn.txt';
 const layoutText = 'clm8jclds00039ug44adt9egn.txt';

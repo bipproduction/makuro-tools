@@ -1,0 +1,1 @@
+git add -A && git commit -m "update baru $(date)" && git push origin main
