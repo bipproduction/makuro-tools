@@ -55,11 +55,12 @@ const listServer = [
                     type: "text"
                 }).then(({ setting }) => setting)
             }
+            
 
             db.set('server_config', {
                 [dataHasil.name]: dataHasil
             })
-            
+
             console.log("SUCCESS !".green)
         }
     }
