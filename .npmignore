@@ -1,7 +1,8 @@
 .env
+/node_modules
 /assets/*
-./build.js
-./makuro-tools.js
-./upload.js
-./xapi.sh
-./db.json
+build.js
+makuro-tools.js
+upload.js
+xapi.sh
+db.json
