@@ -5,6 +5,13 @@ const { CHOICES_TYPE } = require("./models");
 require('colors');
 const { menu_git } = require('@makuro-tools/git')
 
+checkVersion().then((isUpdate) => {
+    if (isUpdate) {
+        console.log("update new version, please wait ...")
+        updatePackage()
+    }
+})
+
 /**
  * @type {CHOICES_TYPE[]}
  */
@@ -24,7 +31,6 @@ const listMainMenu = [
 ];
 
 ; (async () => {
-
     await prompts({
         name: "main_menu",
         message: "select menu",
@@ -34,15 +40,5 @@ const listMainMenu = [
         if (!main_menu) return console.log("bye ...".cyan)
         listMainMenu.find((v) => v.value === main_menu).action()
     })
-
-    console.log("check upadte ...".yellow)
-    checkVersion().then((isUpdate) => {
-        // console.log("cek update ..")
-        if (isUpdate) {
-            console.log("update new version, please wait ...")
-            updatePackage()
-        }
-    })
-
 })()
 
