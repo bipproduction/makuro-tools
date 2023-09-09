@@ -1,0 +1,9 @@
+{
+  "name": "@makuro-tools/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@makuro-tools/db": "^1.0.0"
+  }
+}
