@@ -1,4 +1,4 @@
-const { db } = require("@makuro-tools/db")
+const { db } = require("./../db")
 const { DB_KEY } = require("../../models")
 const { prompt } = require("prompts")
 const choose = require("./choose")

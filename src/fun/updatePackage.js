@@ -1,4 +1,4 @@
-const { db, root } = require('@makuro-tools/db')
+const { db, root } = require('./../../packages/db')
 const { execSync } = require('child_process')
 const fs = require('fs')
 module.exports = async function updatePackage() {

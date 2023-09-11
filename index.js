@@ -1,9 +1,9 @@
 const { checkVersion, updatePackage } = require("./src/fun");
 const prompts = require("prompts");
-const { server } = require("@makuro-tools/server");
+const { server } = require("./packages/server");
 const { CHOICES_TYPE } = require("./models");
 require('colors');
-const { menu_git } = require('@makuro-tools/git')
+const { menu_git } = require('./packages/git')
 
 checkVersion().then((isUpdate) => {
     if (isUpdate) {

@@ -1,4 +1,4 @@
-const { db } = require("@makuro-tools/db")
+const { db } = require("./../db")
 const prompts = require("prompts")
 const { DB_KEY } = require("../../models")
 const { execSync } = require('child_process')
