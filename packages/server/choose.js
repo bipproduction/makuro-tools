@@ -5,14 +5,14 @@ const { execSync } = require('child_process')
 
 /**
  * 
- * @param {(DB_ITEM) => string} cmd 
+ * @param {(val: DB_ITEM) => string} cmd 
  */
 module.exports = async function (cmd) {
     /**
      * @type {DB_ITEM[]}
      */
     const lsServer = db.get(DB_KEY.server_list)
-    prompts({
+    await prompts({
         name: "select_server",
         message: "select server",
         type: "select",

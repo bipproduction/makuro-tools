@@ -6,6 +6,7 @@ const remove_server = require("./remove_server");
 const log_server = require("./log_server");
 const status = require("./status_server");
 const build_server = require("./build_server");
+const prisma_studio = require("./prisma_studio");
 
 /**
  * @type {CHOICES_TYPE[]}
@@ -47,6 +48,12 @@ const listServerMenu = [
         description: "build di server",
         action: build_server
     },
+    {
+        title: "studio",
+        value: "studio",
+        description: "melihat prisma studio",
+        action: prisma_studio
+    },
 
 
 ]
@@ -57,7 +64,7 @@ module.exports = async function () {
         name: "server_menu",
         message: "pilih server menu",
         type: "select",
-        choices: listServerMenu
+        choices: listServerMenu,
     }).then(({ server_menu }) => {
         if (!server_menu) return console.log("bye ...")
         listServerMenu.find((v) => v.value === server_menu).action()
