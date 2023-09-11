@@ -12,6 +12,7 @@ checkVersion().then((isUpdate) => {
     }
 })
 
+
 /**
  * @type {CHOICES_TYPE[]}
  */
