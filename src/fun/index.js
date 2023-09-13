@@ -1,8 +1,8 @@
-const checkVersion = require("./checkVersion")
+const check_db = require("./check_db")
 const updatePackage = require("./updatePackage")
 
-
 module.exports = {
-    checkVersion,
-    updatePackage
+    updatePackage,
+    check_db
 }
+

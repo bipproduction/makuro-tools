@@ -1,5 +1,5 @@
 const prompts = require("prompts");
-const { CHOICES_TYPE } = require("../../models");
+const { CHOICES_TYPE, DB_KEY } = require("../../models");
 const addServer = require("./add_server");
 const list_server = require("./list_server");
 const remove_server = require("./remove_server");
@@ -7,7 +7,9 @@ const log_server = require("./log_server");
 const status = require("./status_server");
 const build_server = require("./build_server");
 const prisma_studio = require("./prisma_studio");
-
+const { db } = require("../db");
+const _ = require('lodash')
+import('colors')
 /**
  * @type {CHOICES_TYPE[]}
  */
@@ -55,11 +57,14 @@ const listServerMenu = [
         action: prisma_studio
     },
 
-
 ]
 
-
 module.exports = async function () {
+    const ser = db.get(DB_KEY.server_list)
+    if (!ser || _.isEmpty(ser)) {
+        console.log("empty server , please add one".yellow)
+        return addServer()
+    }
     prompts({
         name: "server_menu",
         message: "pilih server menu",

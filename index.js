@@ -1,17 +1,14 @@
-const { checkVersion, updatePackage } = require("./src/fun");
+const { updatePackage, check_db } = require("./src/fun");
 const prompts = require("prompts");
 const { server } = require("./packages/server");
 const { CHOICES_TYPE } = require("./models");
 require('colors');
-const { menu_git } = require('./packages/git')
+const { menu_git } = require('./packages/git');
+const { prisma } = require("./packages/prisma");
 
-checkVersion().then((isUpdate) => {
-    if (isUpdate) {
-        console.log("update new version, please wait ...")
-        updatePackage()
-    }
-})
 
+// updatePackage()
+check_db()
 
 /**
  * @type {CHOICES_TYPE[]}
@@ -28,6 +25,12 @@ const listMainMenu = [
         value: "git",
         description: "menu pilihan git",
         action: menu_git
+    },
+    {
+        title: "prisma",
+        value: "prisma",
+        description: "prisma tools",
+        action: prisma
     }
 ];
 
