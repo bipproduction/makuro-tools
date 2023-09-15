@@ -5,6 +5,8 @@ const { CHOICES_TYPE } = require("./models");
 require('colors');
 const { menu_git } = require('./packages/git');
 const { prisma } = require("./packages/prisma");
+const { nextjs } = require("./packages/nextjs");
+const util = require("./packages/util/util");
 
 
 // updatePackage()
@@ -31,6 +33,18 @@ const listMainMenu = [
         value: "prisma",
         description: "prisma tools",
         action: prisma
+    },
+    {
+        title: "nextjs",
+        value: "nextjs",
+        description: "nextjs tools",
+        action: nextjs
+    },
+    {
+        title: "util",
+        value: "util",
+        description: "utility",
+        action: util
     }
 ];
 
