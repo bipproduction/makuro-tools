@@ -1,7 +1,8 @@
 const prompts = require("prompts")
 const { CHOICES_TYPE } = require("../../models")
-const auto_push = require("./auto_push")
+const push = require("./push")
 const status_git = require("./status_git")
+const auto_push = require("./auto_push")
 
 /**
  * @type { CHOICES_TYPE[] }
@@ -11,6 +12,12 @@ const listMenuGit = [
         title: "push",
         description: "push ke server auto",
         value: "push",
+        action: push
+    },
+    {
+        title: "push auto",
+        description: "push ke server auto",
+        value: "push_auto",
         action: auto_push
     },
     {
