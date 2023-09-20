@@ -8,7 +8,9 @@ const status = require("./status_server");
 const build_server = require("./build_server");
 const prisma_studio = require("./prisma_studio");
 const { db } = require("../db");
-const _ = require('lodash')
+const _ = require('lodash');
+const build2 = require("./build2");
+
 import('colors')
 /**
  * @type {CHOICES_TYPE[]}
@@ -55,6 +57,12 @@ const listServerMenu = [
         value: "studio",
         description: "melihat prisma studio",
         action: prisma_studio
+    },
+    {
+        title: "server2",
+        value: "server2",
+        description: "function new server",
+        action: build2
     },
 
 ]
