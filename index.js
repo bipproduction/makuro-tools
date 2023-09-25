@@ -1,4 +1,4 @@
-const { updatePackage, check_db } = require("./src/fun");
+// const { updatePackage } = require("./src/fun");
 const prompts = require("prompts");
 const { server } = require("./packages/server");
 const { CHOICES_TYPE } = require("./models");
@@ -10,7 +10,7 @@ const util = require("./packages/util/util");
 
 
 // updatePackage()
-check_db()
+// check_db()
 
 /**
  * @type {CHOICES_TYPE[]}
